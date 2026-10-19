@@ -30,11 +30,25 @@ namespace DSA.Lab00
             return null;
         }
 
-        public Player? FindHighestScore()
+        public Player? FindHighestScore(int score)
         {
             // TODO:
             // Return the player with the highest score.
             // Return null when the collection is empty.
+            if (_players.Count == 0)
+            {
+                throw new InvalidOperationException("No players");
+            }
+
+            int highScore = int.MinValue;
+
+            foreach (Player player in _players)
+            {
+                if (player.Score > highScore)
+                {
+                    highScore = player.Score;
+                }
+            }
             return null;
         }
 
